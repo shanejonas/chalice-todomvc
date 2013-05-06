@@ -1,0 +1,7 @@
+--recursive
+--compilers coffee:coffee-script
+--require should ./test/spec_helper.coffee
+--ui bdd
+--reporter spec
+--colors
+--growl

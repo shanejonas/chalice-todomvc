@@ -1,0 +1,16 @@
+view()
+  .view
+    max-width: $max-width
+    margin: 0 auto
+  @media tablet
+    .view
+      max-width: ($max-width / 1.5)
+
+  @media phone
+    .view
+      max-width: ($max-width / 3)
+
+new-view(name, background=transparent, color=#fff)
+  .view-{name}
+    background: background
+    color: color

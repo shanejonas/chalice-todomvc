@@ -1,0 +1,35 @@
+@import 'reset'
+
+// variables
+$primary-colour = white
+$max-width = 800px
+
+// device media queries
+tablet = "(min-width: 768px) and (max-width: 979px)"
+phone = "(max-width: 767px)"
+
+@import 'views/view'
+@import 'views/composite'
+
+// base mixins
+view()
+composite-view()
+
+// custom views
+new-view('todo-new', white, black)
+.view-todo-new
+  width: 100%
+
+new-view('todo', $primary-colour, black)
+.view-todo
+  > input
+    display: none
+  label.complete
+    text-decoration: line-through
+.view-todo.editing
+  > input
+    display: inline
+
+
+body
+  background: $primary-colour

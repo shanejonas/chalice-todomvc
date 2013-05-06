@@ -1,0 +1,10 @@
+{{name}} = require '../../src/views/{{nameLower}}'
+
+describe '{{name}}', ->
+
+  it 'noops', ->
+    {{name}}.should.be.a.function
+
+  it 'has a template', ->
+    view = new {{name}}
+    view.template().should.include 'view'
