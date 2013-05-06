@@ -150,8 +150,8 @@ and here is how the `view` and `new-view` `mixins` are defined:
 Grunt is becoming a popular build tool, and for good reason. If you
 haven't seen grunt before, check the [getting started guide](). Running
 `grunt` out of the box will give you a dev server on `localhost:3000`
-that will selectively rebuild and livereload in the browser when `coffee-script` or `stylus` files
-change.
+that will selectively rebuild and livereload in the browser when `.coffee` or
+`.styl` files change.
 
 - `grunt` - Alias for "default" task
 - `grunt default` - Alias for "clean", "stylus:dev", "browserify2:dev", "express:app", "livereload-start", "regarde" tasks.
