@@ -204,5 +204,5 @@ The libraries live on `npm` and [github](http://github.com/shanejonas).
 
 #### Examples Applications:
 - [Blog Example](https://github.com/shanejonas/chalice-blog)
-- [Documentation Site](https://github.com/shanejonas/chalice)
+- [Documentation Site](https://github.com/shanejonas/chalice-docs)
 
