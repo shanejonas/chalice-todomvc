@@ -7,14 +7,7 @@ fs = require 'fs'
 handlebars = require 'handleify/node_modules/handlebars'
 _ = require 'underscore'
 
-
 module.exports = (grunt)->
-
-  beforeHook = (bundle)->
-    bundle.transform coffeeify
-    bundle.transform handleify
-    shim bundle,
-      $: path: './vendor/zepto', exports: 'Zepto'
 
   generatePaths =
     collection:
@@ -71,19 +64,21 @@ module.exports = (grunt)->
       build: ['public/application.js']
       styles: ['public/style.css']
     browserify2:
+      options:
+        expose:
+          backbone: './node_modules/backbone/backbone.js'
+        entry: './src/app/application.coffee'
+        compile: './public/application.js'
+        beforeHook: (bundle)->
+          bundle.transform coffeeify
+          bundle.transform handleify
+          shim bundle,
+            $: path: './vendor/zepto', exports: 'Zepto'
       dev:
-        expose:
-          backbone: './node_modules/backbone/backbone.js'
-        entry: './src/app/application.coffee'
-        compile: './public/application.js'
         debug: yes
-        beforeHook: beforeHook
       build:
-        expose:
-          backbone: './node_modules/backbone/backbone.js'
-        entry: './src/app/application.coffee'
+        debug: no
         compile: './public/application.js'
-        beforeHook: beforeHook
         afterHook: (src)->
           result = uglify.minify src, fromString: true
           result.code
